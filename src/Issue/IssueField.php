@@ -412,9 +412,11 @@ class IssueField implements \JsonSerializable
         return $this;
     }
 
-    public function setParent(Issue $parent)
+    public function setParent(?Issue $parent)
     {
-        $this->parent = $parent;
+        if (!is_null($parent)) {
+            $this->parent = $parent;
+        }
     }
 
     /**
